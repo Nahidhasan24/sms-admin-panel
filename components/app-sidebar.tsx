@@ -7,6 +7,8 @@ import {
   IconFolder,
   IconInnerShadowTop,
   IconUsers,
+  IconSettings2,
+  IconClockDollar,
 } from "@tabler/icons-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -40,19 +42,24 @@ const data = {
       icon: IconUsers,
     },
     {
-      title: "Analytics",
+      title: "Services",
       url: "#",
       icon: IconChartBar,
     },
     {
-      title: "Projects",
+      title: "Providers",
       url: "#",
       icon: IconFolder,
     },
     {
-      title: "Team",
+      title: "TopUp",
       url: "#",
-      icon: IconUsers,
+      icon: IconClockDollar,
+    },
+    {
+      title: "Settings",
+      url: "#",
+      icon: IconSettings2,
     },
   ],
   // navClouds: [
