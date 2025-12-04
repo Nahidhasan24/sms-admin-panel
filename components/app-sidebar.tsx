@@ -38,27 +38,32 @@ const data = {
     },
     {
       title: "Users",
-      url: "#",
+      url: "/users",
       icon: IconUsers,
     },
     {
       title: "Services",
-      url: "#",
+      url: "/service",
       icon: IconChartBar,
     },
     {
       title: "Providers",
-      url: "#",
+      url: "/providers",
       icon: IconFolder,
     },
     {
       title: "TopUp",
-      url: "#",
+      url: "/topup",
+      icon: IconClockDollar,
+    },
+    {
+      title: "TopUp Withdraw",
+      url: "/topup-withdraw",
       icon: IconClockDollar,
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/setting",
       icon: IconSettings2,
     },
   ],
