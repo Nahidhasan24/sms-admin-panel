@@ -20,6 +20,8 @@ export default function SettingsPage() {
   const [referralSettings, setReferralSettings] = useState({
     bonusPercent: 5,
     minWithdraw: 50,
+    notice:
+      "Users are not allowed to use their own referral link. Self-referrals are strictly prohibited and may result in account suspension or a permanent ban",
   });
 
   // Web Settings
@@ -123,6 +125,19 @@ export default function SettingsPage() {
                   }
                 />
               </div>
+              <div className="flex flex-col gap-1">
+                <label className="font-medium">Notice</label>
+                <Input
+                  type="text"
+                  value={referralSettings.notice}
+                  onChange={(e) =>
+                    setReferralSettings({
+                      ...referralSettings,
+                      notice: e.target.value,
+                    })
+                  }
+                />
+              </div>
               <Button onClick={handleReferralUpdate}>Update Referral</Button>
             </CardContent>
           </Card>
@@ -166,6 +181,7 @@ export default function SettingsPage() {
                   }
                 />
               </div>
+
               <Button onClick={handleWebUpdate}>Update Web Settings</Button>
             </CardContent>
           </Card>
