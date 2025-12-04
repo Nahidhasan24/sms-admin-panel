@@ -1,7 +1,7 @@
 "use client";
 
 import { IconCirclePlusFilled, type Icon } from "@tabler/icons-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import {
   SidebarGroup,
@@ -21,6 +21,7 @@ export function NavMain({
   }[];
 }) {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <SidebarGroup>
@@ -37,10 +38,11 @@ export function NavMain({
               <SidebarMenuItem key={item.title}>
                 <SidebarMenuButton
                   tooltip={item.title}
+                  onClick={() => router.push(item.url)} // <-- Navigate on click
                   className={
                     isActive
                       ? "bg-black text-primary-foreground hover:bg-black hover:text-primary-foreground cursor-pointer"
-                      : " hover:bg-black hover:text-primary-foreground cursor-pointer"
+                      : "hover:bg-black hover:text-primary-foreground cursor-pointer"
                   }
                 >
                   {item.icon && <item.icon />}
