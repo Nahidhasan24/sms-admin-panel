@@ -20,6 +20,7 @@ export default function SettingsPage() {
   const [referralSettings, setReferralSettings] = useState({
     bonusPercent: 5,
     minWithdraw: 50,
+    withdrawFee: 2,
     notice:
       "Users are not allowed to use their own referral link. Self-referrals are strictly prohibited and may result in account suspension or a permanent ban",
   });
@@ -64,7 +65,7 @@ export default function SettingsPage() {
             <CardContent className="flex flex-col gap-4">
               <div className="flex flex-col gap-1"></div>
               <div className="flex flex-col gap-1">
-                <label className="font-medium">Minimum Amount</label>
+                <label className="font-medium">Minimum Amount $</label>
                 <Input
                   type="number"
                   value={topupSettings.min}
@@ -77,7 +78,7 @@ export default function SettingsPage() {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="font-medium">Maximum Amount</label>
+                <label className="font-medium">Maximum Amount $</label>
                 <Input
                   type="number"
                   value={topupSettings.max}
@@ -113,7 +114,9 @@ export default function SettingsPage() {
                 />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="font-medium">Minimum Referral Withdraw</label>
+                <label className="font-medium">
+                  Minimum Referral Withdraw $
+                </label>
                 <Input
                   type="number"
                   value={referralSettings.minWithdraw}
@@ -121,6 +124,19 @@ export default function SettingsPage() {
                     setReferralSettings({
                       ...referralSettings,
                       minWithdraw: Number(e.target.value),
+                    })
+                  }
+                />
+              </div>
+              <div className="flex flex-col gap-1">
+                <label className="font-medium">Withdraw Fee $</label>
+                <Input
+                  type="number"
+                  value={referralSettings.withdrawFee}
+                  onChange={(e) =>
+                    setReferralSettings({
+                      ...referralSettings,
+                      withdrawFee: Number(e.target.value),
                     })
                   }
                 />
